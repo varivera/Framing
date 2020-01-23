@@ -35,44 +35,51 @@ def read_info(code, name):
         if code[line].find("assignable") >= 0:
             properties = code[line][code[line].find("assignable") + 10:].split(",")
 
+            # check for 'nothing'. If so, there is no need to look for it in the
+            # ensure part
+
             # retrieve the ensure part
             line += 1  # right after the assignable clause (ignore 'assignable_redundantly')
             # TODO: check code with more than one ensure part
-            if code[line].find("assignable_redundantly") > 0:
-                line += 1
-            if code[line].find("ensures") >= 0:
-                ensure = code[line]
-                while code[line].find(";") == -1:
-                    line += 1
-                    ensure += "\n"+code[line]
-                # ignore 'old' and 'not_modified'
-                ensure = re.sub(r'\\old\(\w+\)', "", ensure)
-                ensure = re.sub(r'\\not_modified\(\w+\)', "", ensure)
-            else:
-                print("W: Assignable without an ensure: ")
-                print(properties)
-                print(code[line])
 
-            print("ensure: ")
-            print(ensure)
-            # for each property, check if it is in the ensure part
-            for pp in properties:
-                p = pp.strip().replace(";", "")
-                if ensure.find(p) >= 0:
-                    print("found: ", end='')
-                elif name in model_queries and p in model_queries[name]: # checking model queries
-                    mq_find = False
-                    for mq in model_queries[name][p]:
-                        if ensure.find(mq) >= 0:
-                            mq_find = True
-                            break
-                    if mq_find:
-                        print("MQ found:", end = '')
-                    else:
-                        print("no found:", end = '')
+            if len(properties) == 1 and properties[0].find("nothing") >= 0:
+                print("assignable \\nothing")
+            else:
+                if code[line].find("assignable_redundantly") > 0:
+                    line += 1
+                if code[line].find("ensures") >= 0:
+                    ensure = code[line]
+                    while code[line].find(";") == -1:
+                        line += 1
+                        ensure += "\n"+code[line]
+                    # ignore 'old' and 'not_modified'
+                    ensure = re.sub(r'\\old\(\w+\)', "", ensure)
+                    ensure = re.sub(r'\\not_modified\(\w+\)', "", ensure)
                 else:
-                    print("CHECK!", end = '')
-                print(p)
+                    print("W: Assignable without an ensure: ")
+                    print(properties)
+                    print(code[line])
+
+                print("ensure: ")
+                print(ensure)
+                # for each property, check if it is in the ensure part
+                for pp in properties:
+                    p = pp.strip().replace(";", "")
+                    if ensure.find(p) >= 0:
+                        print("found: ", end='')
+                    elif name in model_queries and p in model_queries[name]: # checking model queries
+                        mq_find = False
+                        for mq in model_queries[name][p]:
+                            if ensure.find(mq) >= 0:
+                                mq_find = True
+                                break
+                        if mq_find:
+                            print("MQ found:", end = '')
+                        else:
+                            print("no found:", end = '')
+                    else:
+                        print("CHECK!", end = '')
+                    print(p)
         elif code[line].find("@*/") >= 0:
             line += 1
             print(code[line])

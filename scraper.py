@@ -63,15 +63,16 @@ def retrieve(URL, headers, result):
                     print("new ext: "+ url_code)
 
 
-# list of JML samples (from the official site)
-sample = ['http://www.eecs.ucf.edu/~leavens/JML-release/org/', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/']
-# sample = ['http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/dbc/']
-headers = {"User-Agent": 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36'}
-result = {}
+def main():
+    # list of JML samples (from the official site)
+    sample = ['http://www.eecs.ucf.edu/~leavens/JML-release/org/', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/']
+    # sample = ['http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/dbc/']
+    headers = {"User-Agent": 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36'}
+    result = {}
 
-t1 = time.time()
-for URL in sample:
-    retrieve(URL, headers, result)
-t2 = time.time()
-print(result)
-print(round(t2-t1), end=" secs")
+    t1 = time.time()
+    for URL in sample:
+        retrieve(URL, headers, result)
+    t2 = time.time()
+    print(result)
+    print(round(t2-t1), end=" secs")
