@@ -24,13 +24,12 @@ def read_info(code, name):
          postcondition of the routine.
          :param code: java or jml code (string)
          :param name: url of the name of the file being checked, needed for model queries  (string)
-        :return: a list of tuples. The number of elements in the list corresponds to the number
-            of methods in 'code' with an assignable clause. Each element is a tuple:
-                (number of assignable properties, number of properties being mentioned in the postcondition)
+        :return: a list of lists. The number of elements in the list corresponds to the number
+            of methods in 'code' that contains an assignable clause. Each element is a list of two elements:
+                [number of assignable properties, number of properties being mentioned in the postcondition]
     """
     line = 0
     result = []
-    print(model_queries)
     while line < len(code):
 
         # check for assignable clause. If exists, retrieve all properties, check
@@ -43,18 +42,18 @@ def read_info(code, name):
 
             # retrieve the ensure part
             line += 1  # right after the assignable clause (ignore 'assignable_redundantly')
-            # TODO: check code with more than one ensure part
 
             if len(properties) == 1 and properties[0].find("nothing") >= 0:
                 print("assignable \\nothing")
             else:
+                result.append([len(properties), 0])
                 if code[line].find("assignable_redundantly") > 0:
                     line += 1
+                ensure = ""
                 if code[line].find("ensures") >= 0:
-                    ensure = code[line]
-                    while code[line].find(";") == -1:
+                    while code[line].find("ensures") >= 0 or code[line].find(";") >= 0:
+                        ensure += code[line] + "\n"
                         line += 1
-                        ensure += "\n"+code[line]
                     # ignore 'old' and 'not_modified'
                     ensure = re.sub(r'\\old\(\w+\)', "", ensure)
                     ensure = re.sub(r'\\not_modified\(\w+\)', "", ensure)
@@ -69,6 +68,7 @@ def read_info(code, name):
                 for pp in properties:
                     p = pp.strip().replace(";", "")
                     if ensure.find(p) >= 0:
+                        result[-1][1] += 1
                         print("found: ", end='')
                     # checking model queries
                     elif name in model_queries and p in model_queries[name]:
@@ -79,44 +79,100 @@ def read_info(code, name):
                                 break
                         if mq_find:
                             print("MQ found:", end = '')
+                            result[-1][1] += 1
                         else:
                             print("no found:", end = '')
+                    elif name in ignore and p in ignore[name]:
+                        print("Query ignore:", end = '')
+                        result[-1][1] += 1
                     else:
-                        print("CHECK!", end = '')
+                        print("CHECK!: ", end = '')
                     print(p)
         # name of the method
         elif code[line].find("@*/") >= 0:
             line += 1
             print(code[line])
+            # assert c(result)
         line += 1
+    return result
 
 
 def get_JavaJML_code():
     """
     JavaJML code is taking from the official JML web-side
     """
-    f = open("venv/sources/resultScraper", "r")
-    d = eval(f.readline())
-    f.close()
-    # test:
-    #1. 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlexec/samples/ArcType.jml'
-    #2. 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlexec/samples/Digraph.jml'
-    #3. 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLFloat.java'
+    result_scraper_file = open("venv/sources/resultScraper", "r")
+    scrape_info = eval(result_scraper_file.readline())
+    result_scraper_file.close()
+    #urls = ['http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlexec/samples/ArcType.jml',
+    #        'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlexec/samples/Digraph.jml',
+    #        'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLFloat.java'
+    #        ]
+    scrape_info2 = {'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/lang/JMLDataGroup_JML_Test.java':
+         ['http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/lang/JMLDataGroup_JML_Test.java']
+         }
+    result = []
+    report = []
+    for i in scrape_info:
+        urls = scrape_info[i]
 
-    url = 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlexec/samples/ArcType.jml'
-    headers = {
-        "User-Agent": 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36'}
-    page = requests.get(url, headers=headers)
+        for url in urls:
+            print("Evaluating: " + url)
+            headers = {
+                "User-Agent": 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36'}
+            page = requests.get(url, headers=headers)
 
-    soup = BeautifulSoup(page.content, 'html.parser')
-    assert len(soup.contents) == 1
-    read_info(soup.contents[0].split("\n"), url)
+            soup = BeautifulSoup(page.content, 'html.parser')
+            # fix some of the results
+            # fixes are related to getting the information from the web. An alternative would be to download the
+            # the file and evaluate (decided not to do it as the number of files is not big)
+            try:
+                inter_results = read_info(soup.contents[0].split("\n"), url)
+            except:
+                try:
+                    inter_results = read_info(soup.contents[1].string.split("\n"), url)
+                except:
+                    try:
+                        inter_results = read_info(soup.contents[1].contents[0].split("\n"), url)
+                    except:
+                        try:
+                            inter_results = [[0, 0]]
+                        except:
+                            # assert len(soup.contents) == 1
+                            assert False
 
+            print(url)
+            print(inter_results)
+            if not c(inter_results):
+                report.append(url)
+            result += inter_results
+    print("No mentions:")
+    print(report)
+    return result
 
+# model queries are variable representation from abstraction to concrete. These queries as
+# represented in JML via 'represents'
 model_queries = {
-
+'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/AbstractExtensibleStrategyDecorator.java':
+    {'addedData': ['defaultData'],
+     'objectState': ['defaultData']}
 }
 
-get_JavaJML_code()
+# the analysis ignores the following queries for different reasons
+# i) the query is set up in JML: //@ set owner = null;
+ignore = {
+    'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLFloat.java':['owner']
+}
+
+
+
+
+def c(l):
+    for i in l:
+        if i[0] > i[1]:
+            return False
+    return True
+
+print(get_JavaJML_code())
 
 # read_info(c.split("\n"), "PlusAccount.jml")
