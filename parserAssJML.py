@@ -108,8 +108,8 @@ def get_JavaJML_code():
     #        'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlexec/samples/Digraph.jml',
     #        'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLFloat.java'
     #        ]
-    scrape_info2 = {'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/lang/JMLDataGroup_JML_Test.java':
-         ['http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/lang/JMLDataGroup_JML_Test.java']
+    scrape_info = {'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/AbstractFilteringStrategyDecorator.java':
+         ['http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/AbstractFilteringStrategyDecorator.java']
          }
     result = []
     report = []
@@ -155,7 +155,11 @@ def get_JavaJML_code():
 model_queries = {
 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/AbstractExtensibleStrategyDecorator.java':
     {'addedData': ['defaultData'],
-     'objectState': ['defaultData']}
+     'objectState': ['defaultData']},
+'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/AbstractFilteringIteratorDecorator.java':
+    {
+        'objectState': ['rawElems']
+    }
 }
 
 # the analysis ignores the following queries for different reasons
