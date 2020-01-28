@@ -24,10 +24,13 @@ def read_info(code, name):
          postcondition of the routine.
          :param code: java or jml code (string)
          :param name: url of the name of the file being checked, needed for model queries  (string)
-        :return:
+        :return: a list of tuples. The number of elements in the list corresponds to the number
+            of methods in 'code' with an assignable clause. Each element is a tuple:
+                (number of assignable properties, number of properties being mentioned in the postcondition)
     """
     line = 0
-    print (model_queries)
+    result = []
+    print(model_queries)
     while line < len(code):
 
         # check for assignable clause. If exists, retrieve all properties, check
@@ -67,7 +70,8 @@ def read_info(code, name):
                     p = pp.strip().replace(";", "")
                     if ensure.find(p) >= 0:
                         print("found: ", end='')
-                    elif name in model_queries and p in model_queries[name]: # checking model queries
+                    # checking model queries
+                    elif name in model_queries and p in model_queries[name]:
                         mq_find = False
                         for mq in model_queries[name][p]:
                             if ensure.find(mq) >= 0:
@@ -80,11 +84,11 @@ def read_info(code, name):
                     else:
                         print("CHECK!", end = '')
                     print(p)
+        # name of the method
         elif code[line].find("@*/") >= 0:
             line += 1
             print(code[line])
         line += 1
-
 
 
 def get_JavaJML_code():
@@ -99,7 +103,7 @@ def get_JavaJML_code():
     #2. 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlexec/samples/Digraph.jml'
     #3. 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLFloat.java'
 
-    url = 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlexec/samples/Digraph.jml'
+    url = 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlexec/samples/ArcType.jml'
     headers = {
         "User-Agent": 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36'}
     page = requests.get(url, headers=headers)
