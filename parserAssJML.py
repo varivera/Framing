@@ -134,10 +134,9 @@ def get_JavaJML_code():
 
     # testing
     l = ['http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/AbstractFilteringIteratorDecorator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/BooleanAbstractFilteringIteratorDecorator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/BooleanCompositeStrategy.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/BooleanStrategyType.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/ByteAbstractFilteringIteratorDecorator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/ByteCompositeIterator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/ByteCompositeStrategy.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/ByteNonNegativeIteratorDecorator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/ByteStrategyType.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/CharAbstractFilteringIteratorDecorator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/CharCompositeIterator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/CharCompositeStrategy.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/CharStrategyType.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/CompositeIterator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/CompositeStrategy.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/DoubleAbstractFilteringIteratorDecorator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/DoubleCompositeIterator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/DoubleCompositeStrategy.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/DoubleNonNegativeIteratorDecorator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/DoubleStrategyType.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/EmptyNewObjectIterator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/FloatAbstractFilteringIteratorDecorator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/FloatCompositeIterator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/FloatCompositeStrategy.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/FloatNonNegativeIteratorDecorator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/FloatStrategyType.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/IndefiniteIterator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/IndefiniteIteratorUtilities.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/IntAbstractFilteringIteratorDecorator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/IntCompositeIterator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/IntCompositeStrategy.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/IntNonNegativeIteratorDecorator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/IntStrategyType.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/IteratorAbstractAdapter.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/LimitedTestSuite.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/LongAbstractFilteringIteratorDecorator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/LongCompositeIterator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/LongCompositeStrategy.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/LongNonNegativeIteratorDecorator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/LongStrategyType.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/NonNullIteratorDecorator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/ShortAbstractFilteringIteratorDecorator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/ShortCompositeIterator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/ShortCompositeStrategy.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/ShortNonNegativeIteratorDecorator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/ShortStrategyType.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/StrategyType.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/_ValueType_AbstractFilteringIteratorDecorator.java-generic', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/_ValueType_CompositeIterator.java-generic', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/_ValueType_CompositeStrategy.java-generic', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/_ValueType_NonNegativeIteratorDecorator.java-generic', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/_ValueType_StrategyType.java-generic', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLBagEnumerator.java-generic', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLEnumerationToIterator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLEqualsBagEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLEqualsSequenceEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLEqualsSetEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLEqualsToEqualsRelationEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLEqualsToEqualsRelationImageEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLEqualsToObjectRelationEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLEqualsToObjectRelationImageEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLEqualsToValueRelationEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLEqualsToValueRelationImageEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLFiniteInteger.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLObjectBagEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLObjectSequenceEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLObjectSetEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLObjectToEqualsRelationEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLObjectToEqualsRelationImageEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLObjectToObjectRelationEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLObjectToObjectRelationImageEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLObjectToValueRelationEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLObjectToValueRelationImageEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLRelationEnumerator.java-generic', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLRelationImageEnumerator.java-generic', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLSequenceEnumerator.java-generic', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLSetEnumerator.java-generic', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLValueBag.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLValueBagEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLValueSequenceEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLValueSetEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLValueToEqualsRelationEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLValueToEqualsRelationImageEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLValueToObjectRelationEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLValueToObjectRelationImageEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLValueToValueRelationEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLValueToValueRelationImageEnumerator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/resolve/NaturalNumber.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/digraph/SearchableDigraph.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/jmlrefman/Invariant.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/list/iterator/RestartableIterator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/list/list1/E_SLList.jml', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/list/list1/ListIterator.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/list/list1/SLList.jml-refined', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/list/list1/node/DLNode.jml-refined', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/list/list2/TwoWayIterator.jml-refined', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/list/list3/OneWayList.jml-refined', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/list/list3/TwoWayIterator.jml-refined', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/list/node2/DualLink.jml-refined', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/list/node2/TwoWayNode.jml-refined', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/prelimdesign/PlusAccount.jml', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/prelimdesign/USMoney.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/reader/BlankReader.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/reader/Reader.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/sets/IntegerSetAsTree.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/stacks/BoundedStack.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/stacks/BoundedStackImplementation.java', 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/stacks/BoundedStackInterface.jml', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/io/File.refines-java', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/io/OutputStream.refines-java', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/io/PrintStream.refines-java', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/lang/InternalError.jml', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/lang/Number.jml', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/lang/Package.jml', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/net/URI.refines-spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/net/URL.refines-spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/AbstractList.refines-spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/ArrayList.refines-spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/Calendar.refines-spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/Collection.spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/Date.refines-spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/Enumeration.spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/GregorianCalendar.refines-spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/HashMap.refines-spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/HashSet.refines-spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/Hashtable.refines-spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/Iterator.spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/LinkedList.refines-spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/List.spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/ListIterator.spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/Map.spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/Set.spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/Stack.refines-spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/TreeSet.refines-spec', 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/javax/servlet/ServletRequest.refines-spec']
-    ind = 0
     #scrape_info = {
     #    l[ind]:
-    #        [l[ind]]
+    #        [l[ind], l[ind+1], l[ind+2], l[ind+3], l[ind+4], l[ind+5], l[ind+6]]
     #    }
 
     #scrape_info = {'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/CharCompositeStrategy.java':
@@ -147,6 +146,7 @@ def get_JavaJML_code():
     result = []
     report = []
     nfiles = 0
+    final_results = {}
     for i in scrape_info:
         urls = scrape_info[i]
         for url in urls:
@@ -176,7 +176,8 @@ def get_JavaJML_code():
                         'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/lang/Object.jml',
                         'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/lang/System.jml',
                         'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/BitSet.refines-spec',
-                        'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/Vector.refines-spec'
+                        'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/Vector.refines-spec',
+                        'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/net/URL.refines-spec'
                          ]:
                 # unusual JML constructs
                 continue
@@ -215,8 +216,9 @@ def get_JavaJML_code():
             if not c(inter_results):
                 report.append(url)
             result += inter_results
+            final_results[url] = inter_results
 
-    return result, report, nfiles
+    return final_results
 
 # model queries are variable representation from abstraction to concrete. These queries as
 # represented in JML via 'represents'
@@ -302,11 +304,14 @@ model_queries = {
     },
 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLFiniteInteger.java':
     {
-        'sign': ['is_infinite']
+        'sign': ['is_infinite'],
+        'nonnegative': ['sign'],
+        'nonnegative': ['is_infinite']
     },
 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/models/JMLValueBag.java':
     {
-        'the_list': ['objectState']
+        'objectState': ['the_list', 'size', 'elementState']
+
     },
 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/jmlkluwer/PriorityQueue.java':
     {
@@ -342,7 +347,7 @@ model_queries = {
     },
 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/list/node2/DualLink.jml-refined':
     {
-        'entries': ['dualNode']
+        'entries': ['dualNode', 'node']
     },
 'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/list/node2/Link.jml-refined':
     {
@@ -425,6 +430,68 @@ model_queries = {
     },
 'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/Stack.refines-spec':
     {
+        'theCollection': ['theList'],
+        'theList': ['maxCapacity']
+    },
+'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/BooleanAbstractFilteringIteratorDecorator.java':
+    {
+        'objectState': ['rawElems']
+    },
+'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/ByteNonNegativeIteratorDecorator.java':
+    {
+        'objectState': ['rawElems']
+    },
+'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/FloatNonNegativeIteratorDecorator.java':
+    {
+        'objectState': ['rawElems']
+    },
+'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/IntNonNegativeIteratorDecorator.java':
+    {
+        'objectState': ['rawElems']
+    },
+'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/LongNonNegativeIteratorDecorator.java':
+    {
+        'objectState': ['rawElems']
+    },
+'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/NonNullIteratorDecorator.java':
+    {
+        'objectState': ['rawElems']
+    },
+'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/ShortNonNegativeIteratorDecorator.java':
+    {
+        'objectState': ['rawElems']
+    },
+'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/_ValueType_NonNegativeIteratorDecorator.java-generic':
+    {
+        'objectState': ['rawElems']
+    },
+'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/list/list1/E_SLList.jml':
+    {
+        'changeLog': ['length_']
+    },
+'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/list/list2/TwoWayIterator.jml-refined':
+    {
+        'currElem': ['theList', 'currIndex'],
+        'uniteratedElems': ['theList', 'currIndex'],
+        'iteratedElems': ['theList', 'currIndex']
+    },
+'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/list/list3/TwoWayIterator.jml-refined':
+    {
+        'currElem': ['theList', 'currIndex'],
+        'uniteratedElems': ['theList', 'currIndex'],
+        'iteratedElems': ['theList', 'currIndex']
+    },
+'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/stacks/BoundedStackImplementation.java':
+    {
+        'size': ['nextFree'],
+        'theStack': ['nextFree']
+    },
+'http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/stacks/BoundedStackInterface.jml':
+    {
+        'size': ['theStack']
+    },
+'http://www.eecs.ucf.edu/~leavens/JML-release/specs/java/util/AbstractList.refines-spec':
+    {
         'theCollection': ['theList']
     }
 }
@@ -479,27 +546,85 @@ def c(l):
             return False
     return True
 
-
+ind = 13
 #return (result, report, nfiles)
-a, b, c = get_JavaJML_code()
-print("===================Results=================")
-print("[queries in assignable, queries being mentioned]")
-print(a)
-print("Files with no mentions")
-print(b)
-print("Total number of files analysed:")
-print(c)
+t1 = time.time()
+res = get_JavaJML_code()
+t2 = time.time()
+if len(res) != 0:
+    f = open("venv/sources/r.html", "w")
+    f.write("<html><body>")
+    table = """<style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+    .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+    .tg .tg-fymr{font-weight:bold;border-color:inherit;text-align:left;vertical-align:top}
+    .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+    </style>
+    <table class="tg" style="undefined;table-layout: fixed; width: 1107px">
+    <colgroup>
+    <col style="width: 570px">
+    <col style="width: 253px">
+    <col style="width: 284px">
+    </colgroup>
+      <tr>
+        <th class="tg-fymr">Source</th>
+        <th class="tg-fymr"># of queries in \assignable</th>
+        <th class="tg-fymr"># of queries being mentioned in \ensures</th>
+      </tr>
+    """
 
-nq = 0
-mentioned = 0
-for i in a:
-    nq += i[0]
-    mentioned += i[1]
+    print("===================Results=================")
+    t_nq = 0
+    t_nm = 0
+    for i in res:
+        nq = 0
+        nm = 0
+        for a in res[i]:
+            nq += a[0]
+            nm += a[1]
+        print(i + ", " + str(nq) + ", " + str(nm))
+        table += "\n" + """
+<tr>
+    <td class="tg-0pky">
+        <a href="%s">
+        %s</a>
+    </td>
+    <td class="tg-0pky">%s</td>
+    <td class="tg-0pky">%s</td>
+</tr>
+      
+      """ %(i,
+            i.split("/")[-1],
+            str(nq),
+            str(nm)
+            )
+
+        t_nq += nq
+        t_nm += nm
+    print("Total number of files analysed: " + str(len(res)))
+    print("Total number of queries in 'assignable' clauses: " + str(t_nq))
+    print("Total number of queries mentioned in 'ensures' clauses: " + str(t_nm))
+    print("Percentage of queries mentioned: " + str( (t_nm*100.0)/t_nq ))
+    print("===================Results=================")
+
+    f.write("Total number of files analysed: " + str(len(res))+"<br>")
+    f.write("Total number of queries in 'assignable' clauses: " + str(t_nq)+"<br>")
+    f.write("Total number of queries mentioned in 'ensures' clauses: " + str(t_nm)+"<br>")
+    f.write("Percentage of queries mentioned: " + str(round(((t_nm * 100.0) / t_nq),2))+"%<br>")
+    f.write("<p><p>")
+    f.write(table)
+    f.write("</table></body></html>")
+    f.close()
+    print(res)
+    print("time: " + str(round(t2-t1)) + " secs")
 
 
-print("Total number of queries in 'assignable' clauses: " + str(nq))
-
-print("Total number of queries mentioned in 'ensures' clauses: " + str(mentioned))
-
-print("Percentage of queries mentioned: " + str((mentioned*100.0)/nq))
-# read_info(c.split("\n"), "PlusAccount.jml")
+# Common reasons:
+# * incomplete specification (// !FIX ME! complete this specification.),
+#               e.g. http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/digraph/SearchableDigraph.java
+# * incomplete specification: assignable clause without a postcondition,
+#               e.g. http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/jmlunit/strategies/CompositeIterator.java
+# * incomplete spec: 'ensures \not_specified;'
+#               e.g. http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/list/list1/SLList.jml-refined
+# * incomplete spec: http://www.eecs.ucf.edu/~leavens/JML-release/org/jmlspecs/samples/prelimdesign/PlusAccount.jml
